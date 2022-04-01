@@ -28,11 +28,3 @@ describe "exporting from a PSD", ->
     .then -> done
     .catch done()
 
-  it "read additional info", (done) ->
-    psdPath       = path.resolve(__dirname, "../", "examples/images/test.psd")
-    PSD.open(psdPath)
-      .then (psd) ->
-        console.log(psd)
-      .then -> done
-      .catch done()
-
