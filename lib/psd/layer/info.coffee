@@ -28,6 +28,7 @@ LAYER_INFO = {
   name:                   require('../layer_info/unicode_name.coffee')
   nestedSectionDivider:   require('../layer_info/nested_section_divider.coffee')
   objectEffects:          require('../layer_info/object_effects.coffee')
+  placedLayer:            require('../layer_info/placed_layer.coffee')
   sectionDivider:         require('../layer_info/section_divider.coffee')
   solidColor:             require('../layer_info/solid_color.coffee')
   typeTool:               require('../layer_info/typetool.coffee')
