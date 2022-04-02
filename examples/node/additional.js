@@ -7,9 +7,12 @@ let psdPath = path.join(__dirname, file)
 let psd = PSD.fromFile(psdPath)
 psd.parse()
 
-let hat = psd.layers[11];
-hat.placedLayer().parse()
-
-console.log(hat)
-console.log(psd.tree().export())
+console.log("layer count:", psd.layers.length)
+for (let layer of psd.layers) {
+    if (layer.placedLayer) {
+        let tmp = layer.placedLayer()
+        console.log(tmp.transform)
+        console.log(tmp.warp?.meshPoints)
+    }
+}
 console.log('===============')
