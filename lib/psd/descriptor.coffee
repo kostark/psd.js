@@ -126,7 +126,25 @@ module.exports = class Descriptor
   # type is extremely rare. In fact, it's so rare, that I've never run into it
   # among any of my PSDs.
   parseObjectArray: ->
-    throw "Descriptor object array not implemented yet @ #{@file.tell()}"
+    # throw "Descriptor object array not implemented yet @ #{@file.tell()}"
+    @file.readInt()
+    @file.readUnicodeString()
+    @parseId()
+    length = @file.readInt()
+    items = []
+
+    for i in [0...length]
+      type1 = @parseId() # type Hrzn | Vrtc
+      @file.readString(4) # UnFl
+      @file.readString(4)  # units ? '#Pxl'
+      valuesCount = @file.readInt()
+      values = []
+      for j in [0...valuesCount]
+        values.push(@file.readDouble())
+      items.push({ type: type1, values })
+    return items;
+
+
 
   # Parses raw byte data of arbitrary length.
   parseRawData: ->
