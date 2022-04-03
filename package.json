@@ -1,7 +1,7 @@
 {
-  "name": "psd",
+  "name": "psd-ext",
   "description": "A general purpose Photoshop file parser.",
-  "version": "3.3.0",
+  "version": "3.0.1",
   "main": "./index.js",
   "keywords": [
     "psd",
@@ -12,7 +12,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:meltingice/psd.js.git"
+    "url": "git@github.com:kostark/psd.js.git"
   },
   "dependencies": {
     "coffee-script": "^1.12.7",
@@ -26,7 +26,6 @@
   },
   "scripts": {
     "test": "mocha test",
-    "docs": "node_modules/docco-husky/bin/generate lib shims",
     "compile": "coffee --inline-map --compile ./lib",
     "clean": "find ./lib -name '*.js' | xargs rm -f",
     "build": "cake compile-browser",

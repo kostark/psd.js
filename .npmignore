@@ -3,3 +3,5 @@ doc
 examples
 shims
 test
+lib/**/*.js
+lib/**/*.map
